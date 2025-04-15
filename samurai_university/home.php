@@ -151,36 +151,48 @@
           <div class="col-lg-6 col-md-6 col-sx-12 news_col">
             <div class="home_title">News</div>
             <div class="home_title_sub">ニュース</div>
+          <?php
+          // 取得したい投稿記事などの条件を引数として渡す
+          $args = array(
+            // 投稿タイプ
+            'post_type' => 'post',
+            // カテゴリー名
+            'category_name' => 'news',
+            // 1ページに表示する件数
+            'posts_per_page' => 3,
+          );
+          // データの取得
+          $posts = get_posts($args);
+          ?>
+
+          <!-- 取得したデータをループ処理 -->
+           <?php foreach($posts as $post): ?>
+            <?php setup_postdata($post); ?>
             <div class="news_post_small">
               <div class="news_post_meta">
                 <ul>
-                  <li><a href="news_detail.html">2022/05/02</a></li>
-                </ul>
-              </div>
-              <div class="news_post_small_title">
-                <a href="news_detail.html">公開講座「UnityでつくるiOSアプリ」受講生募集</a>
-              </div>
-            </div>
-            <div class="news_post_small">
-              <div class="news_post_meta">
-                <ul>
-                  <li><a href="news_detail.html">2022/05/02</a></li>
-                </ul>
-              </div>
-              <div class="news_post_small_title">
-                <a href="news_detail.html">新規カリキュラム「Pythonコース」登場!</a>
-              </div>
-            </div>
-            <div class="news_post_small">
-              <div class="news_post_meta">
-                <ul>
-                  <li><a href="news_detail.html">2022/05/02</a></li>
-                </ul>
-              </div>
-              <div class="news_post_small_title">
-                <a href="news_detail.html">新規カリキュラム「Pythonコース」登場!</a>
-              </div>
-            </div>
+                  <li>
+                    <!-- aタグで投稿記事へのリンクを作成 -->
+            <a href="<?php echo get_permalink(); ?>">
+            <!-- 日付を出力する　-->
+            <?php echo get_the_date(); ?>
+           </a>
+           </li>
+           </ul>
+           </div>
+           <div class="news_post_small_title">
+                  <!-- aタグで投稿記事へのリンクを作成 -->
+                   <a href="<?php echo get_permalink(); ?>">
+                    <!-- タイトルを出力する　-->
+                   <?php the_title(); ?>
+           </a>
+           </div>
+           </div>
+
+           <?php endforeach; ?>
+           <!-- 使用した投稿データをリセット -->
+            <?php wp_reset_postdata(); ?>
+
           </div>
           <!-- ニュースここまで -->
 
