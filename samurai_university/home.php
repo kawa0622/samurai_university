@@ -65,7 +65,7 @@
     </header>
     <!-- ヘッダー ここまで -->
     <!-- header.php ここまで -->
-
+    <?php get_header();?>
     <!-- メインビジュアル -->
     <div class="home">
       <div class="home_slider_container">
@@ -78,9 +78,9 @@
             </ol>
             <div class="carousel-inner">
               <div class="carousel-item active">
-                <img src="images/top1_1200_630.jpg" class="d-block w-100" style="background-color: #2b7b8e26" />
+                <img src="<?php echo get_template_directory_uri(); ?>/images/top1_1200_630.jpg" class="d-block w-100" style="background-color: #2b7b8e26" />
                 <div class="carousel-caption d-none d-md-block">
-                  <img src="images/logo_big_slide.png" />
+                  <img src="<?php echo get_template_directory_uri(); ?>/images/logo_big_slide.png" />
                   <div class="title-slide">
                     <p>Samurai University</p>
                   </div>
@@ -95,9 +95,9 @@
                 </div>
               </div>
               <div class="carousel-item">
-                <img src="images/top2_1200_630.jpg" class="d-block w-100" />
+                <img src="<?php echo get_template_directory_uri(); ?>/images/top2_1200_630.jpg" class="d-block w-100" />
                 <div class="carousel-caption d-none d-md-block">
-                  <img src="images/logo_big_slide.png" />
+                  <img src="<?php echo get_template_directory_uri(); ?>/images/logo_big_slide.png" />
                   <div class="title-slide">
                     <p>Samurai University</p>
                   </div>
@@ -255,7 +255,7 @@
           <div class="col-lg-4 course_col">
             <div class="course">
               <div class="course_image">
-                <img src="images/pic6-3.jpg" alt="" />
+                <img src="<?php echo get_template_directory_uri(); ?>/images/pic6-3.jpg" alt="" />
               </div>
               <div class="course_body">
                 <h3 class="course_title">
@@ -277,7 +277,7 @@
           <div class="col-lg-4 course_col">
             <div class="course">
               <div class="course_image">
-                <img src="images/pic6-1.jpg" alt="" />
+                <img src="<?php echo get_template_directory_uri(); ?>/images/pic6-1.jpg" alt="" />
               </div>
               <div class="course_body">
                 <h3 class="course_title">
@@ -299,7 +299,7 @@
           <div class="col-lg-4 course_col">
             <div class="course">
               <div class="course_image">
-                <img src="images/pic6-4.jpg" alt="" />
+                <img src="<?php echo get_template_directory_uri(); ?>/images/pic6-4.jpg" alt="" />
               </div>
               <div class="course_body">
                 <h3 class="course_title"><a href="courses_detail.html">法学部</a></h3>
@@ -321,7 +321,7 @@
 
     <!-- 数字 -->
     <div class="counter">
-      <div class="counter_background" style="background-image: url(images/pic_chart.png)"></div>
+      <div class="counter_background" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/pic_chart.png)"></div>
       <div class="footer_row">
         <div class="">
           <div class="">
@@ -330,28 +330,28 @@
                 <div class="milestone col-md-3 col-lg-3 col-sx-12">
                   <div class="milestone_counter">
                     <p>教授数</p>
-                    <img src="images/icon4.png" alt="" />
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/icon4.png" alt="" />
                     <span class="milestone_number">335</span><span class="milestone_count">名</span>
                   </div>
                 </div>
                 <div class="milestone col-md-3 col-lg-3 col-sx-12">
                   <div class="milestone_counter">
                     <p>卒業生徒</p>
-                    <img src="images/icon3.png" alt="" />
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/icon3.png" alt="" />
                     <span class="milestone_number">4526</span><span class="milestone_count">名</span>
                   </div>
                 </div>
                 <div class="milestone col-md-3 col-lg-3 col-sx-12">
                   <div class="milestone_counter">
                     <p>学習コース</p>
-                    <img src="images/icon2.png" alt="" />
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/icon2.png" alt="" />
                     <span class="milestone_number">12</span><span class="milestone_count">コース</span>
                   </div>
                 </div>
                 <div class="milestone col-md-3 col-lg-3 col-sx-12">
                   <div class="milestone_counter">
                     <p>受賞</p>
-                    <img src="images/icon1.png" alt="" />
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/icon1.png" alt="" />
                     <span class="milestone_number">35</span><span class="milestone_count">回</span>
                   </div>
                 </div>
@@ -362,7 +362,7 @@
       </div>
     </div>
     <!-- 数字ここまで -->
-
+<?php get_footer();?> 
     <!-- footer.php ここから -->
     <footer class="footer">
       <div class="row footer_row">
