@@ -4,11 +4,17 @@
 <head>
   <title>samurai university</title>
   <meta charset="utf-8" />
+   <!-- Internet Ezplorer（Edge,レガシーEdge)に対して互換性モードにする -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- 概要記述タグ -->
   <meta name="description" content="samurai university" />
+  <!-- 表示領域、ビューポートの幅は端末やブラウザアプリによって異なる。デフォルトのズーム倍率は１ -->
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- bootstrap.min.cssのテンプレートを呼び出す(wordpressでテーマディレクトリを呼び出す関数、themesの中) -->
   <link rel="stylesheet" type="text/css" href="styles/bootstrap4/bootstrap.min.css" />
+  <!-- font-awesome.min.cssのテンプレートを呼び出す(wordpressでテーマディレクトリを呼び出す関数) -->
   <link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+  <!-- main.cssのテンプレートを呼び出す(wordpressでテーマディレクトリを呼び出す関数) -->
   <link rel="stylesheet" type="text/css" href="styles/main_styles.css" />
 </head>
 
@@ -27,6 +33,7 @@
                 </a>
               </div>
             </div>
+            <!-- これからheader.phpとリンクさせて呼び出す予定？まだリンク飛ばない -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
               aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <i class="fa fa-bars toggle-menu" aria-hidden="true"></i>
@@ -76,9 +83,11 @@
               <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
               <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
             </ol>
+            <!-- １枚目のスライド画像の設定 -->
             <div class="carousel-inner">
               <div class="carousel-item active">
                 <img src="<?php echo get_template_directory_uri(); ?>/images/top1_1200_630.jpg" class="d-block w-100" style="background-color: #2b7b8e26" />
+                <!-- 1枚目のスライドの内容 -->
                 <div class="carousel-caption d-none d-md-block">
                   <img src="<?php echo get_template_directory_uri(); ?>/images/logo_big_slide.png" />
                   <div class="title-slide">
@@ -94,6 +103,7 @@
                   </div>
                 </div>
               </div>
+              <!-- 2枚目のスライド画像の設定 -->
               <div class="carousel-item">
                 <img src="<?php echo get_template_directory_uri(); ?>/images/top2_1200_630.jpg" class="d-block w-100" />
                 <div class="carousel-caption d-none d-md-block">
@@ -111,10 +121,11 @@
                   </div>
                 </div>
               </div>
+              <!-- 3枚目のスライド画像の設定 -->
               <div class="carousel-item">
-                <img src="images/top3_1200_630.jpg" class="d-block w-100" />
+                <img src="<?php echo get_template_directory_uri(); ?>/images/top3_1200_630.jpg" class="d-block w-100" />
                 <div class="carousel-caption d-none d-md-block">
-                  <img src="images/logo_big_slide.png" />
+                  <img src="<?php echo get_template_directory_uri(); ?>/images/logo_big_slide.png" />
                   <div class="title-slide">
                     <p>Samurai University</p>
                   </div>
@@ -129,6 +140,7 @@
                 </div>
               </div>
             </div>
+            <!-- スライドの矢印の設定、コントローラ付きのカルーセルを指定 -->
             <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
               <span class="sr-only">Previous</span>
@@ -152,7 +164,7 @@
             <div class="home_title">News</div>
             <div class="home_title_sub">ニュース</div>
           <?php
-          // 取得したい投稿記事などの条件を引数として渡す
+          // 取得したい投稿記事などの条件を引数として渡す。arrayは配列を作成する関数
           $args = array(
             // 投稿タイプ
             'post_type' => 'post',
@@ -161,18 +173,18 @@
             // 1ページに表示する件数
             'posts_per_page' => 3,
           );
-          // データの取得
+          // $argsの投稿データの取得
           $posts = get_posts($args);
           ?>
 
-          <!-- 取得したデータをループ処理 -->
+          <!-- 取得したデータをループ処理（＄配列名as$要素) -->
            <?php foreach($posts as $post): ?>
-            <?php setup_postdata($post); ?>
+            <?php setup_postdata($post); ?> // 投稿データをセット
             <div class="news_post_small">
               <div class="news_post_meta">
                 <ul>
                   <li>
-                    <!-- aタグで投稿記事へのリンクを作成 -->
+                    <!-- aタグで投稿記事へのパーマリンクを作成 -->
             <a href="<?php echo get_permalink(); ?>">
             <!-- 日付を出力する　-->
             <?php echo get_the_date(); ?>
@@ -190,7 +202,7 @@
            </div>
 
            <?php endforeach; ?>
-           <!-- 使用した投稿データをリセット -->
+           <!-- 使用した投稿データをリセット。ループとセットで使用する -->
             <?php wp_reset_postdata(); ?>
 
           </div>
