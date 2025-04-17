@@ -7,7 +7,7 @@
               <div class="col-lg-4 footer_col">
                 <div class="footer_section footer_about">
                   <div class="footer_logo_container">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/logo_big.png" alt="" />
+                  <img src="<?php echo get_template_directory_uri(); ?>/images/logo_big.png" alt="" />
                     <a href="">
                       <div class="footer_logo_text">Samurai University</div>
                     </a>
