@@ -394,7 +394,6 @@
       </div>
     </div>
     <!-- 数字ここまで -->
-<?php get_footer();?> 
     <!-- footer.php ここから -->
     <footer class="footer">
       <div class="row footer_row">
