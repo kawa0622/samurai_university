@@ -179,7 +179,7 @@
 
           <!-- 取得したデータをループ処理（＄配列名as$要素) -->
            <?php foreach($posts as $post): ?>
-            <?php setup_postdata($post); ?> // 投稿データをセット
+            <?php setup_postdata($post); ?>
             <div class="news_post_small">
               <div class="news_post_meta">
                 <ul>
