@@ -96,6 +96,16 @@
                     <?php endif; ?>
                     <!-- news loop until here-->
 
+                    <div class="news-pagination">
+                      <?php
+                      // 記事一覧ページ用のページネーション　array配列、plain（デフォルト）単なる文字列、list順序なしのTHMLリストとして表示
+                      echo paginate_links(array(
+                        'total' => $wp_query->max_num_pages,
+                        'prev_text' => '&lt;&lt;前へ',
+                        'next_text' => '次へ&gt;&gt;',
+                      ));
+                      ?>
+                      </div>
                   </div>
                 </div>
               </div>
