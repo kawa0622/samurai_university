@@ -15,7 +15,7 @@
 
     <!-- Course -->
      <?php if (have_posts()): //ループを実装。投稿があるかチェックする ?>
-      <?php while (have_post()) : the_post(); ?> <!-- 投稿がある場合、ループを開始する。the_postで投稿を取得する -->
+      <?php while (have_posts()) : the_post(); ?> <!-- 投稿がある場合、ループを開始する。the_postで投稿を取得する -->
       
     <div class="course">
       <div class="row content-body">
@@ -40,7 +40,7 @@
         </div>
       </div>
     </div>
-    <?php endwhile; //ループの終了 ?>
+    <?php endwhile; ?>
     <?php endif; ?>
 
     <?php get_footer(); ?>
