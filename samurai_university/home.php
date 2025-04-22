@@ -33,7 +33,6 @@
                 </a>
               </div>
             </div>
-            <!-- これからheader.phpとリンクさせて呼び出す予定？まだリンク飛ばない -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
               aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <i class="fa fa-bars toggle-menu" aria-hidden="true"></i>
@@ -52,6 +51,11 @@
                     <p>イベント</p>
                   </a>
                 </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="graduates.html">
+                  GRANDUATES
+                    <p>卒業生の声</p>
+                  </a>
                 <li class="nav-item">
                   <a class="nav-link" href="courses.html">
                     COURSES
@@ -207,8 +211,8 @@
 
           </div>
           <!-- ニュースここまで -->
-
-          <!-- イベント -->
+           
+           <!-- イベント -->
           <div class="col-lg-6 col-md-6 col-sx-12 news_col">
             <div class="home_title">Event</div>
             <div class="home_title_sub">イベント</div>
@@ -267,6 +271,55 @@
 
           </div>
           <!-- イベントここまで -->
+
+          <!-- 卒業生の声 -->
+          <div class="col-lg-6 col-md-6 col-sx-12 news_col">
+            <div class="home_title">GRADUATES</div>
+            <div class="home_title_sub">卒業生の声</div>
+          <?php
+          // 取得したい投稿記事などの条件を引数として渡す。arrayは配列を作成する関数
+          $args = array(
+            // 投稿タイプ
+            'post_type' => 'post',
+            // カテゴリー名
+            'category_name' => 'graduates',
+            // 1ページに表示する件数
+            'posts_per_page' => 3,
+          );
+          // $argsの投稿データの取得
+          $posts = get_posts($args);
+          ?>
+
+          <!-- 取得したデータをループ処理（＄配列名as$要素) -->
+           <?php foreach($posts as $post): ?>
+            <?php setup_postdata($post); ?>
+            <div class="news_post_small">
+              <div class="news_post_meta">
+                <ul>
+                  <li>
+                    <!-- aタグで投稿記事へのパーマリンクを作成 -->
+            <a href="<?php echo get_permalink(); ?>">
+            <!-- 日付を出力する　-->
+            <?php echo get_the_date(); ?>
+           </a>
+           </li>
+           </ul>
+           </div>
+           <div class="news_post_small_title">
+                  <!-- aタグで投稿記事へのリンクを作成 -->
+                   <a href="<?php echo get_permalink(); ?>">
+                    <!-- タイトルを出力する　-->
+                   <?php the_title(); ?>
+           </a>
+           </div>
+           </div>
+
+           <?php endforeach; ?>
+           <!-- 使用した投稿データをリセット。ループとセットで使用する -->
+            <?php wp_reset_postdata(); ?>
+
+          </div>
+          <!-- 卒業生の声ここまで -->
         </div>
       </div>
     </div>
