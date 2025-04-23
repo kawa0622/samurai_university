@@ -15,3 +15,5 @@ function remove_default_jquery()
 
 
 add_action('wp_enqueue_scripts', 'remove_default_jquery');
+add_theme_support('post-thumbnails'); //add_theme_supportは特定の機能テーマを使えるようにする関数。post-thumbnailsはアイキャッチ画像につけるタグ
+
