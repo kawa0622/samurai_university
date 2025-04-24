@@ -11,9 +11,8 @@
         </div>
       </div>
     </div>
-
+    
     <!-- Courses -->
-
     <div class="courses">
       <div class="footer_row">
         <div class="row">
