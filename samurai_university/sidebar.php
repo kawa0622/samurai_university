@@ -1,5 +1,14 @@
  <!-- sidebar-main に切り出す -->
  <div class="sidebar">
+  <div class="sidebar_search">
+    <div class="category">
+      <div class="section_title_container category_title">
+        <h2>検索</h2>
+        <!-- searchform.phpがあれば読み込む。なければデフォルトの検索フォームが表示される -->
+        <?php get_search_form(); ?>
+      </div>
+    </div>
+  </div>
             <div class="category">
               <div class="section_title_container category_title">
                 <h2>CATEGORY</h2>
