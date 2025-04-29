@@ -193,7 +193,15 @@
 
           </div>
           <!-- イベントここまで -->
+          </div>
+      </div>
+    </div>
+    <!-- ニュースとイベントここまで -->
 
+    <!-- 卒業生の声 -->
+    <div class="news">
+      <div class="footer_row">
+        <div class="row news_row">
           <!-- 卒業生の声 -->
           <div class="col-lg-6 col-md-6 col-sx-12 news_col">
             <div class="home_title">GRADUATES</div>
