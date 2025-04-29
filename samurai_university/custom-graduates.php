@@ -43,17 +43,7 @@ Template Post Type: post
                   <div class="tab_panel_text">
                     <div class="news_posts_small">
                       <div class="row">
-                        <div class="col-lg-2 col-md-2 col-sx-12">
-                          <div class="calendar_news_border">
-                            <div class="calendar_news_border_1">
-                              <!-- 公開日時を取得し、投稿の月を’F'でフルスペルで表示　-->
-                              <div class="calendar_month"><?php echo get_post_time('F'); ?></div>
-                              <div class="calendar_day">
-                                <!-- 投稿の日時を取得し表示する -->
-                                <span><?php echo get_the_date('d'); ?></span>
-                              </div>
-                            </div>
-                          </div>
+                        
                         </div>
                         <div class="col-lg-10 col-md-10 col-sx-12">
                           <div class="news_post_small_header">
